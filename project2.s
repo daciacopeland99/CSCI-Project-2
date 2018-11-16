@@ -13,3 +13,10 @@
         add $t1, $0, 0 #initialize $t1 register
 
         la $t2, userInput #load string into $t2 register
+        lb $t0, 0($t2)
+        beq $t0, 10, isEmpty #check for an empty string
+        beq $t0, 0 isEmpty
+
+        addi $s0, $0, 35 #store Base-N number
+        addi $t3, $0, 1
+

@@ -8,3 +8,8 @@
 		li $v0, 8 #syscall to read string
 		la $a0, userInput #stores address of string
 		li $a1, 500 #create ample space for string input
+        syscall
+        add $t0, $0, 0 #initialize $t0 register
+        add $t1, $0, 0 #initialize $t1 register
+
+        la $t2, userInput #load string into $t2 register

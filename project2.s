@@ -95,3 +95,9 @@
         end:
             move $a0, $t5 #move value to $a0
             li $v0, 1 #print value
+	        syscall
+            li $v0, 10 #end program
+            syscall
+
+        asciiConversions:
+            blt $t0, 48, isInvalid #if char is before 0 in ascii table, the input is invalid

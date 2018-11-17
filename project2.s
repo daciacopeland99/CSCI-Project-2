@@ -47,5 +47,11 @@
 	    beq $t0, 0, restart
             bne $t0, 32, isInvalid #jump to isInvalid branch if not equal
             j viewRemaining
+	    
+	restart:
+	    sub $t2, $t2, $t1 #restart the pointer
+            la $t1, 0 #restart the counter
 
-        restart:
+        continue:
+            lb $t0, 0($t2)
+            addi $t2, $t2, 1

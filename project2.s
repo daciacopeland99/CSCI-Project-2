@@ -66,3 +66,9 @@
             beq $t0, 0, doLoop
             beq $t0, 32, doLoop
             beq $t1, 5, isTooLong
+	    j stringLength
+
+        doLoop:
+            sub $t2, $t2, $t1 #subtract and store in $t2
+            sub $t1, $t1, $t3 #subtact and store in $t1
+            lb $t0, ($t2)

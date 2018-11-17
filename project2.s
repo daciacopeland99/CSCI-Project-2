@@ -106,3 +106,10 @@
             blt $t0, 90, upperCase
             blt $t0, 97, isInvalid
             blt $t0, 122, lowerCase
+	    blt $t0, 128, isInvalid
+
+        upperCase:
+            addi $t0, $t0, -55
+            j multiplication #jump to multiplication branch
+
+        lowerCase:

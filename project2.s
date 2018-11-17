@@ -3,6 +3,7 @@
 	emptyInput: .ascizz "Input is empty." #message for empty string
 	longInput: .ascizz "Input it is too long." #messgae for string that has more than 4 characters
 	invalidInput: .ascizz "Invalid base-35 number." #message for string that includes one or more characters not in set
+	userInput: .space 1000
 .text
 	main:
 		li $v0, 8 #syscall to read string
@@ -22,6 +23,8 @@
         addi $t4, $0, 0
         addi $t5, $0, 0
 
-        isEmpty:
-        la $a0, emptyInput #loads string/message
-        li $v0, 4 #prints string
+         ignoreSpaces:
+            lb $t0, 0($t2) #load address in $t2 to $t0
+            addi $t2, $t2, 1 #increment pointer
+            addi $t1, $t1, 1 #increment counter
+            beq $t0, 32, ignoreSpaces #jump to ignoreSpaces branch if equal

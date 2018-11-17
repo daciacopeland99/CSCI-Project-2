@@ -72,3 +72,9 @@
             sub $t2, $t2, $t1 #subtract and store in $t2
             sub $t1, $t1, $t3 #subtact and store in $t1
             lb $t0, ($t2)
+	    sub $s1, $t1, $t3 #subtract and store in $s1
+
+        greatestPower:
+            beq $s1, 0, asciiConvertions
+            mult $t3, $s0
+            mflo $t3

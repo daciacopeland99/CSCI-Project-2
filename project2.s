@@ -89,3 +89,9 @@
             div $t3, $s0 #divide and store in LO
             mflo $t3
             add $t2, $t2, 1
+	    lb $t0, 0($t2)
+            j asciiConversions
+
+        end:
+            move $a0, $t5 #move value to $a0
+            li $v0, 1 #print value

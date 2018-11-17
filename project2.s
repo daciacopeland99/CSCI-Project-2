@@ -119,3 +119,8 @@
         number:
             addi $t0, $t0, -48
 	    j multiplication
+	    
+	isEmpty:
+            la $a0, emptyInput #loads string/message
+            li $v0, 4 #prints string
+            syscall

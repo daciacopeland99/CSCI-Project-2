@@ -113,3 +113,9 @@
             j multiplication #jump to multiplication branch
 
         lowerCase:
+            addi $t0, $t0, -87
+            j multiplication
+
+        number:
+            addi $t0, $t0, -48
+	    j multiplication

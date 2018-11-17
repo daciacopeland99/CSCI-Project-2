@@ -101,3 +101,8 @@
 
         asciiConversions:
             blt $t0, 48, isInvalid #if char is before 0 in ascii table, the input is invalid
+	    blt $t0, 58, number
+            blt $t0, 65, isInvalid
+            blt $t0, 90, upperCase
+            blt $t0, 97, isInvalid
+            blt $t0, 122, lowerCase

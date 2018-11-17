@@ -78,3 +78,9 @@
             beq $s1, 0, asciiConvertions
             mult $t3, $s0
             mflo $t3
+	    sub $s1, $s1, 1
+            j greatestPower
+
+        multiplication:
+            mult $t0, $t3 #multipy and store in LO
+            mflo $t4, #move value in LO to $t4

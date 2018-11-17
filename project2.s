@@ -84,3 +84,8 @@
         multiplication:
             mult $t0, $t3 #multipy and store in LO
             mflo $t4, #move value in LO to $t4
+	    add $t5, $t5, $t4 #sum
+            beq $t3, 1 end
+            div $t3, $s0 #divide and store in LO
+            mflo $t3
+            add $t2, $t2, 1

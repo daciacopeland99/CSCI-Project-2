@@ -18,5 +18,10 @@
         beq $t0, 0 isEmpty
 
         addi $s0, $0, 35 #store Base-N number
-        addi $t3, $0, 1
+        addi $t3, $0, 1 #initialize new registers
+        addi $t4, $0, 0
+        addi $t5, $0, 0
 
+        isEmpty:
+        la $a0, emptyInput #loads string/message
+        li $v0, 4 #prints string
